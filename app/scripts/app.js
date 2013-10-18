@@ -204,7 +204,6 @@ d3.csv('data/radial_tree_data.csv', function(csv_data) {
   }
   var updateRate = function(lang) {
     var langSeries = languages.filter(function(d) { return d.key.replace('/','') === lang; })[0];
-    console.log(langSeries);
     var rates = langSeries.values.map(function(d) { return {year: d.year, growth_rate: d.growth_rate}; });
 
     var rate_x = d3.scale.linear()
