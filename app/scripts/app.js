@@ -53,7 +53,7 @@ var pctFormat = d3.format(".2f");
 
 d3.csv('data/radial_tree_data.csv', function(csv_data) {
   var data, years, langs, x, y,
-      xaxis, yaxis, stack, languages,
+      xaxis, yaxis, stack, languages, dates,
       langSelection, color, area, curveArea, main, allYears, connections;
 
   csv_data.forEach(function(d) {
@@ -99,13 +99,13 @@ d3.csv('data/radial_tree_data.csv', function(csv_data) {
     .range(set3);
 
   area = d3.svg.area()
-    .x(function(d, i) { if (i % 2 == 0) return x(d.year) + stack_width; return x(d.year); })
+    .x(function(d, i) { if (i % 2 == 0) return x(d.year) + stackWidth; return x(d.year); })
     .y0(function(d) { return y(d.y0); })
     .y1(function(d) { return y(d.y1);})
     .interpolate("cardinal");
 
   curveArea = function(d,i) {
-    var x0 = x(d[0].year) + stack_width,
+    var x0 = x(d[0].year) + stackWidth,
         x1 = x(d[1].year),
         xdist = x1 - x0,
         y00 = y(d[0].y0),
@@ -171,7 +171,7 @@ d3.csv('data/radial_tree_data.csv', function(csv_data) {
     .attr({
       x: 0,
       y: 0, //function(d,i) {return y(d.y1);},
-      width: stack_width,
+      width: stackWidth,
       height: function(d) { return y(d.y0) - y(d.y1); },
       fill: function(d,i) { return color(d.lang);}
     });
