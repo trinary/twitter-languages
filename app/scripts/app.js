@@ -1,17 +1,18 @@
-/*global define */
+
+"use strict"
 
 var svg = d3.select('svg'),
   margin = {left: 30, right: 0, top: 0, bottom: 40},
   width = 1024,
   height = 800,
-  stack_width = 80,
-  stack_margin = 5,
-  set3 = ["#8dd3c7","#ffffb3","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5","#d9d9d9","#bc80bd","#ccebc5","#ffed6f"], // ColorBrewer Set 3
-  pastel1 =  ["#fbb4ae", "#b3cde3","#ccebc5","#decbe4","#fed9a6","#ffffcc","#e5d8bd","#fddaec","#f2f2f2"];
+  stackWidth = 80,
+  stackMargin = 5,
+  set3 = ['#8dd3c7','#ffffb3','#bebada','#fb8072','#80b1d3','#fdb462','#b3de69','#fccde5','#d9d9d9','#bc80bd','#ccebc5','#ffed6f'], // ColorBrewer Set 3
+  pastel1 =  ['#fbb4ae', '#b3cde3','#ccebc5','#decbe4','#fed9a6','#ffffcc','#e5d8bd','#fddaec','#f2f2f2'];
 
 
 svg.attr({
-  width: width,
+    width: width,
   height: height
 });
 
