@@ -168,7 +168,9 @@ d3.csv('data/radial_tree_data.csv', function(csvData) {
     var lang = d.lang.replace('/','');
     d3.selectAll('.lang').classed('highlighted',false);
     d3.selectAll('.lang-connections').classed('highlighted',false);
+    d3.selectAll('.lang-connections > path').classed('highlighted',false);
     d3.selectAll('.lang-' + lang).classed('highlighted',true);
+    d3.selectAll('.lang-' + lang + ' > path').classed('highlighted',true);
     updateLabel(lang);
     updateRate(lang);
   };
@@ -183,7 +185,6 @@ d3.csv('data/radial_tree_data.csv', function(csvData) {
 
   var updateRate = function(lang) {
     var langSeries = languages.filter(function(d) { return d.key.replace('/','') === lang; })[0];
-    console.log(langSeries.values);
     var rates = langSeries.values.map(function(d) { return {year: d.year, growthRate: d.growthRate}; });
 
     var rateX = d3.scale.linear()

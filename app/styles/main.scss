@@ -91,9 +91,8 @@ body {
 }
 
 .lang { 
-  stroke: steelblue;
-  stroke-width: 1px;
-  shape-rendering: crispEdges;
+  stroke: none;
+//  shape-rendering: crispEdges;
 }
 
 text { 
@@ -104,12 +103,17 @@ text {
 .conn {
   fill: #666666;
   stroke: #66CCFF;
-  fill-opacity: 10%;
+  fill-opacity: 5%;
+  stroke-opacity: 10%;
+}
+.conn.highlighted {
+  fill-opacity: 50%;
+  stroke-opacity: 100%;
 }
 
 .highlighted {
-  stroke-width: 2px;
-  stroke: orange;
+  stroke-width: 1px;
+  stroke: steelblue;
 }
 
 .axis, .domain {
